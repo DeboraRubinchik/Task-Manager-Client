@@ -33,3 +33,7 @@ Start the server:
 
 - Open your browser at http://localhost:4200.
 - Important to know: For the application to run correctly, the backend server must be running at http://localhost:5289.
+- Connection in StackBlitz:
+On StackBlitz it is trying to connect to the backend at http://localhost:5289.
+Since the backend is not hosted online, the app will not display or save new tasks in the StackBlitz preview unless you have the server running locally on your machine.
+## To see the full functionality, please follow the instructions in the Server repository to run the backend locally.
