@@ -36,4 +36,4 @@ Start the server:
 - Connection in StackBlitz:
 On StackBlitz it is trying to connect to the backend at http://localhost:5289.
 Since the backend is not hosted online, the app will not display or save new tasks in the StackBlitz preview unless you have the server running locally on your machine.
-## To see the full functionality, please follow the instructions in the Server repository to run the backend locally.
+## To see the full functionality, please follow the instructions in the Server README to run the backend locally. You can find it here -> https://github.com/DeboraRubinchik/Task-Manager-Server
