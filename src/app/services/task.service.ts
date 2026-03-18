@@ -22,7 +22,6 @@ export class TaskService {
   constructor() {this.loadTasks();}
 
   loadTasks() {
-    console.log("מנסה לפנות לכתובת:", this.apiUrl); // זה ידפיס לנו בדיוק מה נשלח
     this.http.get<Task[]>(this.apiUrl).subscribe({
       next: (tasks) => {
         this.tasks = tasks;
