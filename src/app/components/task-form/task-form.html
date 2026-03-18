@@ -1,0 +1,63 @@
+<div class="container mt-4">
+  <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+    <div class="card-body">
+      
+      <h5 class="card-title text-center mb-4 text-primary">
+        {{ isEditMode ? 'עריכת משימה' : 'הוספת משימה' }}
+      </h5>
+      
+      <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label class="form-label">כותרת המשימה <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="title">
+          <div *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched" class="text-danger small">
+            שדה כותרת הוא חובה.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">תיאור המשימה</label>
+          <textarea class="form-control" rows="3" formControlName="description"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">עדיפות</label>
+          <select class="form-select" formControlName="priority">
+            <option value="נמוכה">נמוכה</option>
+            <option value="בינונית">בינונית</option>
+            <option value="גבוהה">גבוהה</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">תאריך יעד <span class="text-danger">*</span></label>
+          <input type="date" class="form-control" formControlName="dueDate">
+          <div *ngIf="taskForm.get('dueDate')?.invalid && taskForm.get('dueDate')?.touched" class="text-danger small">
+            שדה תאריך הוא חובה.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">סטטוס</label>
+          <select class="form-select" formControlName="status">
+            <option value="ממתינה">ממתינה</option>
+            <option value="בתהליך">בתהליך</option>
+            <option value="הושלמה">הושלמה</option>
+          </select>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn px-4" [ngClass]="isEditMode ? 'btn-success' : 'btn-primary'" [disabled]="taskForm.invalid">
+             <i class="bi" [ngClass]="isEditMode ? 'bi-save' : 'bi-plus-circle'"></i>
+             {{ isEditMode ? 'עדכן משימה' : 'הוסף משימה' }}
+          </button>
+
+          <button *ngIf="isEditMode" type="button" class="btn btn-link text-muted ms-2" (click)="taskForm.reset(); isEditMode = false;">
+            ביטול
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
