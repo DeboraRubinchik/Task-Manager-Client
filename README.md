@@ -1,5 +1,5 @@
 # TaskManagerClient
-This is the client-side interface for the Task Manager application that i built with Angular version 21.2.2. ([Angular CLI](https://github.com/angular/angular-cli)). It helps the user managing his daily tasks.
+This is the client-side interface for the Task Manager application that i built with Angular version 21.2.2. It helps the user managing his daily tasks.
 
 Development server:
 To start a local server, please run:
